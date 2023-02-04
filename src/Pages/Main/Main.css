@@ -1,0 +1,46 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../../Assets/main/gradient.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.main_container {
+  width: calc(100% - 140px);
+  margin: 0 auto;
+  padding-top: 25px;
+}
+.main_logo {
+  margin-bottom: 26px;
+}
+.main_logo2 {
+  width: 299px;
+  height: 299px;
+  position: absolute;
+  right: 545px;
+  bottom: 308px;
+}
+.main button {
+  width: 464px;
+  height: 60px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.main button:hover {
+  transform: scale(1.03);
+}

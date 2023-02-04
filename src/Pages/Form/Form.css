@@ -1,0 +1,11 @@
+.form_container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.form_page_left {
+  width: 57.2%;
+}
+.form_page_right {
+  width: 42.8%;
+}

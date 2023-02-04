@@ -1,0 +1,27 @@
+@font-face {
+  font-family: myfont;
+  font-weight: normal;
+  src: url("../fonts/HelveticaNeue.ttc");
+}
+* {
+  font-family: myfont;
+}
+a {
+  text-decoration: none;
+}
+button,
+.btn {
+  cursor: pointer;
+  outline: none;
+}
+body {
+  background-color: #2d313ac4;
+  color: #fff;
+  font-family: myfont;
+}
+.container {
+  max-width: 1920px;
+  max-height: 1080px;
+  width: 100%;
+  min-height: 100vh;
+}
