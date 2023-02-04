@@ -1,0 +1,58 @@
+.rightside {
+  width: calc(100% - 160px);
+  margin: 68px auto 0 auto;
+  display: none;
+}
+.tab_divider_rightside {
+  width: 100%;
+  border: 1px solid #c8c8c8;
+}
+.rightside.active {
+  display: flex;
+}
+.image_field {
+  max-width: 246px;
+  max-height: 246px;
+}
+.rightside .text_field {
+  width: 432px;
+}
+.rightside .text_field section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+}
+.rightside .text_field section p:first-child {
+  margin-right: 20px;
+}
+.text_field_span {
+  display: flex;
+  align-items: center;
+}
+.text_field_span.first {
+  margin-bottom: 10px;
+}
+.text_field_span.second {
+  margin-bottom: 34px;
+}
+.text_field_span p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  margin-left: 11.81px;
+  color: #1a1a1a;
+}
+.about_me_field {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: lowercase;
+  color: #000000;
+}
+img.rightside_logo {
+  position: absolute;
+  left: 78px;
+  bottom: 44px;
+}

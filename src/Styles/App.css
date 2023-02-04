@@ -1,8 +1,10 @@
 .global_header_container {
-  width: calc(100% - 300px);
-  margin: 0 auto;
-  /* padding-top: 49px; */
   padding: 49px 0px 77px 0px;
+}
+.form_page_left_container {
+  width: calc(100% - 300px);
+  height: 100%;
+  margin: 0 auto;
 }
 .global_back_icon {
   background-color: #fff;
@@ -32,6 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 12px;
 }
 .global_content_header span p {
   font-style: normal;
@@ -60,6 +63,9 @@
 .next_back.short {
   width: 113px;
 }
+button.next_back.personal_page.short {
+  left: 150px;
+}
 .addmorefield {
   width: 289px;
   height: 48px;
@@ -82,4 +88,93 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
+  margin: 8px 0;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.name_inputs {
+  width: 371px;
+}
+.full_input {
+  width: 100%;
+}
+.normal_inputs {
+  padding: 12.7px 16px;
+}
+.global_input_titles {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+}
+.global_input_titles.big {
+  font-size: 18px;
+  line-height: 22px;
+  color: #1a1a1a;
+}
+/* render */
+.global_rendered_fullname {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+  color: #f93b1d;
+}
+.global_rendered_description_title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #f93b1d;
+  margin-bottom: 14px;
+}
+.global_rendered_subtitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1a1a1a;
+}
+.global_rendered_subtitle_italic {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #919191;
+}
+.global_rendered_description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: capitalize;
+  color: #000000;
+}
+.global_rendered_description.aboutme {
+  text-transform: lowercase;
+}
+.global_input_validations {
+  color: #2e2e2e;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+}
+.global_textarea {
+  resize: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  padding: 12.7px 16px;
+}
+.tab_divider_line {
+  width: 100%;
+  border: 1px solid #c1c1c1;
+  margin-bottom: 45px;
 }

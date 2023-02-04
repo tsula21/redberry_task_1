@@ -5,7 +5,13 @@
 }
 .form_page_left {
   width: 57.2%;
+  background: #f9f9f9;
+  height: 1080px;
+  position: relative;
 }
 .form_page_right {
   width: 42.8%;
+  height: 1080px;
+  background-color: #fff;
+  position: relative;
 }

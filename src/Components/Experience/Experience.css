@@ -1,0 +1,16 @@
+.position,
+.employer {
+  margin-bottom: 31px;
+}
+.experience_tab .about_me {
+  margin-bottom: 58px;
+}
+.global_textarea.experience_page {
+  height: 123px;
+}
+.experience_tab .personal_name {
+  margin-bottom: 33px;
+}
+.experience_tab .personal_name .global_common_input {
+  margin: 8px 0 0 0;
+}
