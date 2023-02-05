@@ -2,17 +2,14 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import "./Personal.css";
+import UploadImage from "../Upload/Upload";
 //
 import back from "../../Assets/form/left_arrow.svg";
 
 const Personal = () => {
   const { pageNum, setPageNum, resumeInfo, setResumeInfo } =
     useContext(UserContext);
-  const [image, setImage] = useState("");
-  function handleImage(e) {
-    console.log(e.target.files);
-    setImage(e.target.files[0]);
-  }
+
   return (
     <>
       <div className="global_header_container">
@@ -73,8 +70,7 @@ const Personal = () => {
       </section>
       <section className="upload_section">
         <h2 className="global_input_titles">პირადი ფოტოს ატვირთვა</h2>
-        {/* <button className="upload_photo">ატვირთვა</button> */}
-        <input type="file" name="file" onChange={handleImage} />
+        <UploadImage />
       </section>
       <section className="about_me">
         <h2 className="global_input_titles">ჩემ შესახებ (არასავალდებულო)</h2>

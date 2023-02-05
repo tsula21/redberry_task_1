@@ -14,3 +14,28 @@
 .experience_tab .personal_name .global_common_input {
   margin: 8px 0 0 0;
 }
+.working_date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 33px;
+}
+.date_input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 371px;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  padding: 0 16px;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+.date_input img {
+  cursor: pointer;
+}
+.date_input input {
+  width: 100%;
+  padding: 14.4px 0px;
+  border: none;
+}

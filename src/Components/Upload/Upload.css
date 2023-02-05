@@ -1,0 +1,28 @@
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "ატვირთვა";
+  display: inline-block;
+  background: #0e80bf;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 19.27px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  transition: all 0.25s ease;
+}
+.custom-file-input:hover::before {
+  background: #1890d0;
+}
+.custom-file-input:active::before {
+  background: #92d9ff;
+  color: rgb(43, 39, 39);
+}

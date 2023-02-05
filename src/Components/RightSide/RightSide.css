@@ -11,11 +11,25 @@
   display: flex;
 }
 .image_field {
-  max-width: 246px;
-  max-height: 246px;
+  width: 246px;
+  height: 246px;
+}
+.image_field img {
+  width: 246px;
+  height: 246px;
+  border-radius: 50%;
+}
+.image_field div {
+  background-image: url(blob:http://localhost:3000/c2ac30a7-7268-4d60-8532-76936b7a6d97);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 246px;
+  height: 246px;
+  border-radius: 50%;
 }
 .rightside .text_field {
-  width: 432px;
+  width: 415px;
 }
 .rightside .text_field section {
   display: flex;

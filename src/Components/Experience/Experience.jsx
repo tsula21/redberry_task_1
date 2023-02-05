@@ -4,9 +4,11 @@ import { UserContext } from "../../UserContext";
 import "./Experience.css";
 //
 import back from "../../Assets/form/left_arrow.svg";
+import calendar from "../../Assets/form/calendar.svg";
 
 const Experience = () => {
-  const { pageNum, setPageNum } = useContext(UserContext);
+  const { pageNum, setPageNum, resumeInfo, setResumeInfo } =
+    useContext(UserContext);
   return (
     <>
       <div className="global_header_container">
@@ -43,22 +45,20 @@ const Experience = () => {
           />
           <div className="global_input_validations">მინიმუმ 2 სიმბოლო</div>
         </section>
-        <section className="personal_name">
-          <div className="firstName">
+        <section className="working_date">
+          <div>
             <h2 className="global_input_titles">დაწყების რიცხვი</h2>
-            <input
-              className="global_common_input name_inputs normal_inputs"
-              type="text"
-              placeholder="mm / dd / yyyy"
-            />
+            <div className="date_input">
+              <input type="text" placeholder="mm / dd / yyyy" />
+              <img src={calendar} alt="calendar" />
+            </div>
           </div>
-          <div className="lastName">
+          <div>
             <h2 className="global_input_titles">დამთავრების რიცხვი</h2>
-            <input
-              className="global_common_input name_inputs normal_inputs"
-              type="text"
-              placeholder="mm / dd / yyyy"
-            />
+            <div className="date_input">
+              <input type="text" placeholder="mm / dd / yyyy" />
+              <img src={calendar} alt="calendar" />
+            </div>
           </div>
         </section>
         <section className="about_me">

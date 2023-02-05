@@ -37,7 +37,12 @@ const RightSide = () => {
         <div className="about_me_field">{resumeInfo.personal.about}</div>
       </div>
       <div className="image_field">
-        <img src={avatar} alt="avatar" />
+        {/* <img src={resumeInfo.personal.photo} alt="avatar" /> */}
+        <div
+          style={{
+            backgroundImage: `url(${resumeInfo.personal.photo})`,
+          }}
+        ></div>
       </div>
       {/* <div className="tab_divider_rightside"></div> */}
 

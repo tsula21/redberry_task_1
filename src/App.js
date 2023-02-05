@@ -8,16 +8,42 @@ import Experience from "./Components/Experience/Experience";
 
 function App() {
   const [pageNum, setPageNum] = useState(1);
+  const initialState = {
+    personal: {
+      firstname: "ირაკლი",
+      lastname: "წულაია",
+      photo: [],
+      about:
+        "ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ. ",
+
+      email: "ika.tsulai21@redberry.ge",
+      phone: "+995568942133",
+    },
+    experience: {
+      position: "ვებ დეველოპერი",
+      company: "redberry",
+      start: "",
+      end: "",
+      description: "ვმუშაობდი ფრონტენდ მიმართულებით",
+      // more experience
+    },
+    education: {
+      university: "",
+      degree: 1,
+      education_finish: "",
+      education_description: "",
+      // more
+    },
+  };
+
   // const initialState = {
   //   personal: {
-  //     firstname: "ირაკლი",
-  //     lastname: "წულაია",
+  //     firstname: "",
+  //     lastname: "",
   //     //photo!!!
-  //     about:
-  //       "ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ. ",
-
-  //     email: "ika.tsulai21@redberry.ge",
-  //     phone: "+995568942133",
+  //     about: "ზოგადი ინფო შენ შესახებ",
+  //     email: "",
+  //     phone: "",
   //   },
   //   experience: {
   //     position: "",
@@ -35,31 +61,6 @@ function App() {
   //     // more
   //   },
   // };
-  const initialState = {
-    personal: {
-      firstname: "",
-      lastname: "",
-      //photo!!!
-      about: "ზოგადი ინფო შენ შესახებ",
-      email: "",
-      phone: "",
-    },
-    experience: {
-      position: "",
-      company: "",
-      start: "",
-      end: "",
-      description: "",
-      // more experience
-    },
-    education: {
-      university: "",
-      degree: 1,
-      education_finish: "",
-      education_description: "",
-      // more
-    },
-  };
   useEffect(() => {
     console.log(resumeInfo);
   }, []);

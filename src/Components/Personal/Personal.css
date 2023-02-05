@@ -43,5 +43,7 @@ button.next_back.personal_page {
   bottom: 65px;
 }
 input[type="file"] {
-  /*  */
+  color: orangered;
+  margin-left: 19px;
+  width: 107px;
 }
