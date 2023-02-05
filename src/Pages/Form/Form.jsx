@@ -7,7 +7,7 @@ import RightSide from "../../Components/RightSide/RightSide";
 import "./Form.css";
 
 const Form = () => {
-  const { pageNum, setPageNum } = useContext(UserContext);
+  const { pageNum } = useContext(UserContext);
   return (
     <div className="form">
       <div className="form_container">

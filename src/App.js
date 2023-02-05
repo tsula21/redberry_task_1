@@ -26,7 +26,8 @@ function App() {
       company: "redberry",
       start: "",
       end: "",
-      description: "",
+      description:
+        "Experienced Javascript Native Developer with 5 years in the industry. proficient withreact. Used problem-solving aptitude to encahge application performance by 14%.created data visualisation tools and integrated designs.",
       // more experience
     },
     education: {
