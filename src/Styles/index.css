@@ -21,9 +21,9 @@ button,
   outline: none;
 }
 body {
-  background-color: #2d313ac4;
-  background: #474747;
-  color: #fff;
+  /* background-color: #2d313ac4; */
+  /* background: #474747; */
+  color: #000;
   font-family: myfont;
 }
 .container {

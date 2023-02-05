@@ -12,7 +12,9 @@ function App() {
     personal: {
       firstname: "ირაკლი",
       lastname: "წულაია",
-      photo: [],
+      photo: [
+        "blob:http://localhost:3000/276294e4-c8a7-4e97-91bf-3607d396da63",
+      ],
       about:
         "ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ. ",
 
@@ -24,7 +26,7 @@ function App() {
       company: "redberry",
       start: "",
       end: "",
-      description: "ვმუშაობდი ფრონტენდ მიმართულებით",
+      description: "",
       // more experience
     },
     education: {

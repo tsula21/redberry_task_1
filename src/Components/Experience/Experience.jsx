@@ -33,6 +33,18 @@ const Experience = () => {
             className="global_common_input normal_inputs full_input"
             type="text"
             placeholder="დეველოპერი, დიზაინერი, ა.შ."
+            value={resumeInfo.experience.position}
+            onChange={(e) => {
+              const updateValue = {
+                ...resumeInfo.experience,
+                position: e.target.value,
+              };
+              const updateResumeInfo = {
+                ...resumeInfo,
+                experience: updateValue,
+              };
+              setResumeInfo(updateResumeInfo);
+            }}
           />
           <div className="global_input_validations">მინიმუმ 2 სიმბოლო</div>
         </section>
@@ -42,6 +54,18 @@ const Experience = () => {
             className="global_common_input normal_inputs full_input"
             type="text"
             placeholder="დამსაქმებელი"
+            value={resumeInfo.experience.company}
+            onChange={(e) => {
+              const updateValue = {
+                ...resumeInfo.experience,
+                company: e.target.value,
+              };
+              const updateResumeInfo = {
+                ...resumeInfo,
+                experience: updateValue,
+              };
+              setResumeInfo(updateResumeInfo);
+            }}
           />
           <div className="global_input_validations">მინიმუმ 2 სიმბოლო</div>
         </section>
@@ -65,9 +89,18 @@ const Experience = () => {
           <h2 className="global_input_titles">აღწერა</h2>
           <textarea
             className="global_textarea experience_page"
-            value={"როლი თანამდებობაზე და ზოგადი აღწერა"}
+            placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
+            value={resumeInfo.experience.description}
             onChange={(e) => {
-              console.log(e);
+              const updateValue = {
+                ...resumeInfo.experience,
+                description: e.target.value,
+              };
+              const updateResumeInfo = {
+                ...resumeInfo,
+                experience: updateValue,
+              };
+              setResumeInfo(updateResumeInfo);
             }}
           >
             ზოგადი ინფო შენ შესახებ
