@@ -133,6 +133,7 @@ button.next_back.personal_page.short {
   font-size: 16px;
   line-height: 20px;
   color: #1a1a1a;
+  text-transform: capitalize;
 }
 .global_rendered_subtitle_italic {
   font-style: italic;

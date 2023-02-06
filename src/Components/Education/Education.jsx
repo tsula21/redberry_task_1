@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import "./Education.css";
 //
-import back from "../../Assets/form/left_arrow.svg";
-import calendar from "../../Assets/form/calendar.svg";
 import down_arrow from "../../Assets/form/down_arrow.svg";
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
 
 const Education = () => {
   const { pageNum, setPageNum, resumeInfo, setResumeInfo } =
@@ -34,15 +33,30 @@ const Education = () => {
         <div>
           <h2 className="global_input_titles">ხარისხი</h2>
           <div className="date_input">
-            <input type="text" placeholder="აირჩიეთ ხარისხი" />
-            <img src={down_arrow} alt="down_arrow" />
+            <DropDownMenu />
+            {/* <input type="text" placeholder="აირჩიეთ ხარისხი" />
+            <img src={down_arrow} alt="down_arrow" /> */}
           </div>
         </div>
         <div>
           <h2 className="global_input_titles">დამთავრების რიცხვი</h2>
           <div className="date_input">
-            <input type="text" placeholder="mm / dd / yyyy" />
-            <img src={calendar} alt="calendar" />
+            <input
+              type="date"
+              placeholder="mm / dd / yyyy"
+              value={resumeInfo.education.education_finish}
+              onChange={(e) => {
+                const updateValue = {
+                  ...resumeInfo.education,
+                  education_finish: e.target.value,
+                };
+                const updateResumeInfo = {
+                  ...resumeInfo,
+                  education: updateValue,
+                };
+                setResumeInfo(updateResumeInfo);
+              }}
+            />
           </div>
         </div>
       </section>

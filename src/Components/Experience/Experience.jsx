@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import "./Experience.css";
 //
-import calendar from "../../Assets/form/calendar.svg";
 
 const Experience = () => {
   const { pageNum, setPageNum, resumeInfo, setResumeInfo } =
@@ -57,15 +56,43 @@ const Experience = () => {
           <div>
             <h2 className="global_input_titles">დაწყების რიცხვი</h2>
             <div className="date_input">
-              <input type="text" placeholder="mm / dd / yyyy" />
-              <img src={calendar} alt="calendar" />
+              <input
+                type="date"
+                placeholder="mm / dd / yyyy"
+                value={resumeInfo.experience.start}
+                onChange={(e) => {
+                  const updateValue = {
+                    ...resumeInfo.experience,
+                    start: e.target.value,
+                  };
+                  const updateResumeInfo = {
+                    ...resumeInfo,
+                    experience: updateValue,
+                  };
+                  setResumeInfo(updateResumeInfo);
+                }}
+              />
             </div>
           </div>
           <div>
             <h2 className="global_input_titles">დამთავრების რიცხვი</h2>
             <div className="date_input">
-              <input type="text" placeholder="mm / dd / yyyy" />
-              <img src={calendar} alt="calendar" />
+              <input
+                type="date"
+                placeholder="mm / dd / yyyy"
+                value={resumeInfo.experience.end}
+                onChange={(e) => {
+                  const updateValue = {
+                    ...resumeInfo.experience,
+                    end: e.target.value,
+                  };
+                  const updateResumeInfo = {
+                    ...resumeInfo,
+                    experience: updateValue,
+                  };
+                  setResumeInfo(updateResumeInfo);
+                }}
+              />
             </div>
           </div>
         </section>
@@ -93,7 +120,6 @@ const Experience = () => {
         <div className="tab_divider_line"></div>
       </div>
 
-      {/* =============================== */}
       <button className="addmorefield">მეტი გამოცდილების დამატება</button>
       <button
         className="next_back personal_page short"

@@ -10,7 +10,9 @@ const RightExperience = () => {
       <p className="global_rendered_subtitle">
         {resumeInfo.education.university}
       </p>
-      <p className="global_rendered_subtitle_italic">2020-09-23 - 2020-09-23</p>
+      <p className="global_rendered_subtitle_italic">
+        {resumeInfo.education.education_finish}
+      </p>
       <p className="global_rendered_description">
         {resumeInfo.education.education_description}
       </p>

@@ -1,7 +1,20 @@
 .school {
   margin-bottom: 31px;
 }
-
 .about_me.education_field {
   margin-bottom: 53px;
+}
+.select {
+  width: 371px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+}
+.select_variants {
+  width: 371px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
 }

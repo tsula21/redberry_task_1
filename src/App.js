@@ -8,83 +8,57 @@ import Experience from "./Components/Experience/Experience";
 
 function App() {
   const [pageNum, setPageNum] = useState(1);
+  const [degreeArr, setDegreeArr] = useState();
   const initialState = {
     personal: {
-      firstname: "ირაკლი",
-      lastname: "წულაია",
-      photo: [
-        "blob:http://localhost:3000/276294e4-c8a7-4e97-91bf-3607d396da63",
-      ],
-      about:
-        "ძალიან მიყვარს დიზაინის კეთება. დილით ადრე რომ ავდგები გამამხნევებელი ვარჯიშების მაგიერ დიზაინს ვაკეთებ. ",
+      firstname: "",
+      lastname: "",
+      photo: [],
+      about: "",
 
-      email: "ika.tsulai21@redberry.ge",
-      phone: "+995568942133",
+      email: "",
+      phone: "",
     },
     experience: {
-      position: "ვებ დეველოპერი",
-      company: "redberry",
+      position: "",
+      company: "",
       start: "",
       end: "",
-      description:
-        "Experienced Javascript Native Developer with 5 years in the industry. proficient withreact. Used problem-solving aptitude to encahge application performance by 14%.created data visualisation tools and integrated designs.",
+      description: "",
       // more experience
     },
     education: {
-      university: "წმ. ანდრიას საპატრიარქოს სასწავლებელი,",
-      degree: 1,
+      university: "",
+      degree: "",
       education_finish: "",
-      education_description: "ssssssssssssss",
+      education_description: "",
       // more
     },
   };
 
-  // const initialState = {
-  //   personal: {
-  //     firstname: "",
-  //     lastname: "",
-  //     //photo!!!
-  //     about: "ზოგადი ინფო შენ შესახებ",
-  //     email: "",
-  //     phone: "",
-  //   },
-  //   experience: {
-  //     position: "",
-  //     company: "",
-  //     start: "",
-  //     end: "",
-  //     description: "",
-  //     // more experience
-  //   },
-  //   education: {
-  //     university: "",
-  //     degree: 1,
-  //     education_finish: "",
-  //     education_description: "",
-  //     // more
-  //   },
-  // };
-  useEffect(() => {
-    console.log(resumeInfo);
-  }, []);
   const [resumeInfo, setResumeInfo] = useState(initialState);
-  // const renderForm = () => {
-  //   switch (page) {
-  //     case 0:
+  useEffect(() => {
+    console.log("request");
+    (async () => {
+      const limit = 10;
+      const response = await fetch(
+        "https://resume.redberryinternship.ge/api/degrees"
+      );
+      if (!response.ok) {
+        console.error("Request failed");
+        return;
+      }
 
-  //     case 1:
+      const data = await response.json();
 
-  //     case 2:
-
-  //     default:
-  //       return;
-  //   }
-  // };
+      setDegreeArr(data);
+    })();
+  }, []);
   return (
     <BrowserRouter>
       <div className="App">
         <UserContext.Provider
-          value={{ pageNum, setPageNum, resumeInfo, setResumeInfo }}
+          value={{ pageNum, setPageNum, resumeInfo, setResumeInfo, degreeArr }}
         >
           <div className="container">
             <Routes>

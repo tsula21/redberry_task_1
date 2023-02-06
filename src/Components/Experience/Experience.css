@@ -30,6 +30,7 @@
   padding: 0 16px;
   margin-top: 8px;
   border-radius: 4px;
+  position: relative;
 }
 .date_input img {
   cursor: pointer;
