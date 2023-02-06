@@ -4,7 +4,6 @@ import { UserContext } from "../../UserContext";
 import "./Personal.css";
 import UploadImage from "../Upload/Upload";
 //
-import back from "../../Assets/form/left_arrow.svg";
 
 const Personal = () => {
   const { pageNum, setPageNum, resumeInfo, setResumeInfo } =
@@ -12,20 +11,6 @@ const Personal = () => {
 
   return (
     <>
-      <div className="global_header_container">
-        <Link to="/">
-          <div className="global_back_icon">
-            <img src={back} alt="back" />
-          </div>
-        </Link>
-        <div className="global_content_header">
-          <span>
-            <div className="page_title">ᲞᲘᲠᲐᲓᲘ ᲘᲜᲤᲝ</div>
-            <p>1/3</p>
-          </span>
-          <div className="global_underline"></div>
-        </div>
-      </div>
       <section className="personal_name">
         <div className="firstName">
           <h2 className="global_input_titles">სახელი</h2>

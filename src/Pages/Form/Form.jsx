@@ -5,6 +5,7 @@ import Experience from "../../Components/Experience/Experience";
 import Education from "../../Components/Education/Education";
 import RightSide from "../../Components/RightSide/RightSide";
 import "./Form.css";
+import FormHeader from "../../Components/FormHeader/FormHeader";
 
 const Form = () => {
   const { pageNum } = useContext(UserContext);
@@ -13,6 +14,7 @@ const Form = () => {
       <div className="form_container">
         <div className="form_page_left">
           <div className="form_page_left_container">
+            <FormHeader />
             {pageNum == 1 && <Personal />}
             {pageNum == 2 && <Experience />}
             {pageNum == 3 && <Education />}

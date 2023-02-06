@@ -12,20 +12,6 @@ const Education = () => {
     useContext(UserContext);
   return (
     <>
-      <div className="global_header_container">
-        <Link to={`${pageNum == 1 ? "/" : ""}`} onClick={() => setPageNum(2)}>
-          <div className="global_back_icon">
-            <img src={back} alt="back" />
-          </div>
-        </Link>
-        <div className="global_content_header">
-          <span>
-            <div className="page_title">ᲒᲐᲜᲐᲗᲚᲔᲑᲐ</div>
-            <p>3/3</p>
-          </span>
-          <div className="global_underline"></div>
-        </div>
-      </div>
       <section className="school">
         <h2 className="global_input_titles">სასწავლებელი</h2>
         <input
@@ -77,7 +63,7 @@ const Education = () => {
         ></textarea>
       </section>
       <div className="tab_divider_line"></div>
-      <button className="addmorefield">მეტი გამოცდილების დამატება edu</button>
+      <button className="addmorefield">მეტი გამოცდილების დამატება</button>
       <button
         className="next_back personal_page short"
         onClick={() => setPageNum(2)}

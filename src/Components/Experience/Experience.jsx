@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import "./Experience.css";
 //
-import back from "../../Assets/form/left_arrow.svg";
 import calendar from "../../Assets/form/calendar.svg";
 
 const Experience = () => {
@@ -11,21 +10,6 @@ const Experience = () => {
     useContext(UserContext);
   return (
     <>
-      <div className="global_header_container">
-        <Link to={`${pageNum == 1 ? "/" : ""}`} onClick={() => setPageNum(1)}>
-          <div className="global_back_icon">
-            <img src={back} alt="back" />
-          </div>
-        </Link>
-
-        <div className="global_content_header">
-          <span>
-            <div className="page_title">ᲒᲐᲛᲝᲪᲓᲘᲚᲔᲑᲐ</div>
-            <p>2/3</p>
-          </span>
-          <div className="global_underline"></div>
-        </div>
-      </div>
       <div className="experience_tab">
         <section className="position">
           <h2 className="global_input_titles">თანამდებობა</h2>
