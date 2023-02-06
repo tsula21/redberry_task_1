@@ -71,7 +71,7 @@ const Education = () => {
         უკან
       </button>
       <button className="next_back personal_page" onClick={() => setPageNum(3)}>
-        ᲨᲔᲛᲓᲔᲒᲘ
+        ᲓᲐᲡᲠᲣᲚᲔᲑᲐ
       </button>
     </>
   );
