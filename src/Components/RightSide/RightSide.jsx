@@ -3,7 +3,7 @@ import "./RightSide.css";
 import { UserContext } from "../../UserContext";
 import RightPersonal from "../RightPersonal/RightPersonal";
 import RightExperience from "../RightExperience/RightExperience";
-import RightEducation from "../RightEducation/RightExperience";
+import RightEducation from "../RightEducation/RightEducatio";
 //
 
 import mini_logo from "../../Assets/form/mini_logo.svg";
@@ -25,8 +25,6 @@ const RightSide = () => {
         <div className="tab_divider_rightside for_experience"></div>
         <RightEducation />
       </div>
-
-      {/* <div className="tab_divider_rightside"></div> */}
 
       <img className="rightside_logo" src={mini_logo} alt="logo" />
     </div>

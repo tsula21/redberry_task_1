@@ -8,7 +8,8 @@ import calendar from "../../Assets/form/calendar.svg";
 import down_arrow from "../../Assets/form/down_arrow.svg";
 
 const Education = () => {
-  const { pageNum, setPageNum } = useContext(UserContext);
+  const { pageNum, setPageNum, resumeInfo, setResumeInfo } =
+    useContext(UserContext);
   return (
     <>
       <div className="global_header_container">
@@ -31,6 +32,15 @@ const Education = () => {
           className="global_common_input normal_inputs full_input"
           type="text"
           placeholder="სასწავლებელი"
+          value={resumeInfo.education.university}
+          onChange={(e) => {
+            const updateValue = {
+              ...resumeInfo.education,
+              university: e.target.value,
+            };
+            const updateResumeInfo = { ...resumeInfo, education: updateValue };
+            setResumeInfo(updateResumeInfo);
+          }}
         />
         <div className="global_input_validations">მინიმუმ 2 სიმბოლო</div>
       </section>
@@ -38,7 +48,7 @@ const Education = () => {
         <div>
           <h2 className="global_input_titles">ხარისხი</h2>
           <div className="date_input">
-            <input type="text" placeholder="mm / dd / yyyy" />
+            <input type="text" placeholder="აირჩიეთ ხარისხი" />
             <img src={down_arrow} alt="down_arrow" />
           </div>
         </div>
@@ -54,16 +64,20 @@ const Education = () => {
         <h2 className="global_input_titles">აღწერა</h2>
         <textarea
           className="global_textarea experience_page"
-          value={"განათლების აღწერა"}
+          placeholder="განათლების აღწერა"
+          value={resumeInfo.education.education_description}
           onChange={(e) => {
-            console.log(e);
+            const updateValue = {
+              ...resumeInfo.education,
+              education_description: e.target.value,
+            };
+            const updateResumeInfo = { ...resumeInfo, education: updateValue };
+            setResumeInfo(updateResumeInfo);
           }}
-        >
-          ზოგადი ინფო შენ შესახებ
-        </textarea>
+        ></textarea>
       </section>
       <div className="tab_divider_line"></div>
-      <button className="addmorefield">მეტი გამოცდილების დამატება</button>
+      <button className="addmorefield">მეტი გამოცდილების დამატება edu</button>
       <button
         className="next_back personal_page short"
         onClick={() => setPageNum(2)}

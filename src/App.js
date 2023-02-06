@@ -31,10 +31,10 @@ function App() {
       // more experience
     },
     education: {
-      university: "",
+      university: "წმ. ანდრიას საპატრიარქოს სასწავლებელი,",
       degree: 1,
       education_finish: "",
-      education_description: "",
+      education_description: "ssssssssssssss",
       // more
     },
   };
