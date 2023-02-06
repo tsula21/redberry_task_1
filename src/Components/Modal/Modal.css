@@ -1,0 +1,26 @@
+.done_modal {
+  position: relative;
+  width: 427px;
+  height: 167px;
+  background: #ffffff;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+.done_modal_container {
+  padding: 39.5px 33px 41.5px 30px;
+}
+.done_modal img {
+  position: absolute;
+  right: 11.44px;
+  top: 17.44px;
+  cursor: pointer;
+}
+.done_modal p {
+  width: 364px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 43px;
+  color: #1a1a1a;
+}
