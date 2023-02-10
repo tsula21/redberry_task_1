@@ -1,11 +1,6 @@
 .global_header_container {
   padding: 49px 0px 77px 0px;
 }
-.form_page_left_container {
-  width: calc(100% - 300px);
-  height: 100%;
-  margin: 0 auto;
-}
 .global_back_icon {
   background-color: #fff;
   width: 40px;

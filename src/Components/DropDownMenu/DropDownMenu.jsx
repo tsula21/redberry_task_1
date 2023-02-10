@@ -3,18 +3,25 @@ import "./DropDownMenu.css";
 import { UserContext } from "../../UserContext";
 import left_arrow from "../../Assets/form/down_arrow.svg";
 
-const DropDownMenu = () => {
-  const { resumeInfo, setResumeInfo, degreeArr } = useContext(UserContext);
+const DropDownMenu = ({ index }) => {
+  const { educationInfo, setEducationInfo, degreeArr } =
+    useContext(UserContext);
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState("");
   //
   useEffect(() => {
-    const updateValue = {
-      ...resumeInfo.education,
-      degree: selected,
-    };
-    const updateResumeInfo = { ...resumeInfo, education: updateValue };
-    setResumeInfo(updateResumeInfo);
+    setEducationInfo(
+      educationInfo.map((item) => {
+        if (item.id == index) {
+          return {
+            ...educationInfo[index],
+            degree: selected,
+          };
+        } else {
+          return item;
+        }
+      })
+    );
   }, [selected]);
   //
   const options = ["რეაქთი", "ვიუ ვიუ", "ანგულარი"];

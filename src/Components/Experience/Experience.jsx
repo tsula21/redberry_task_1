@@ -1,126 +1,22 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
+import SingleMoreExperience from "../SingleMoreExperience/SingleMoreExperience";
 import "./Experience.css";
 //
 
 const Experience = () => {
-  const { pageNum, setPageNum, resumeInfo, setResumeInfo } =
+  const { setPageNum, experienceInfo, addNewExperienceObg } =
     useContext(UserContext);
   return (
     <>
-      <div className="experience_tab">
-        <section className="position">
-          <h2 className="global_input_titles">თანამდებობა</h2>
-          <input
-            className="global_common_input normal_inputs full_input"
-            type="text"
-            placeholder="დეველოპერი, დიზაინერი, ა.შ."
-            value={resumeInfo.experience.position}
-            onChange={(e) => {
-              const updateValue = {
-                ...resumeInfo.experience,
-                position: e.target.value,
-              };
-              const updateResumeInfo = {
-                ...resumeInfo,
-                experience: updateValue,
-              };
-              setResumeInfo(updateResumeInfo);
-            }}
-          />
-          <div className="global_input_validations">მინიმუმ 2 სიმბოლო</div>
-        </section>
-        <section className="employer">
-          <h2 className="global_input_titles">დამსაქმებელი</h2>
-          <input
-            className="global_common_input normal_inputs full_input"
-            type="text"
-            placeholder="დამსაქმებელი"
-            value={resumeInfo.experience.company}
-            onChange={(e) => {
-              const updateValue = {
-                ...resumeInfo.experience,
-                company: e.target.value,
-              };
-              const updateResumeInfo = {
-                ...resumeInfo,
-                experience: updateValue,
-              };
-              setResumeInfo(updateResumeInfo);
-            }}
-          />
-          <div className="global_input_validations">მინიმუმ 2 სიმბოლო</div>
-        </section>
-        <section className="working_date">
-          <div>
-            <h2 className="global_input_titles">დაწყების რიცხვი</h2>
-            <div className="date_input">
-              <input
-                type="date"
-                placeholder="mm / dd / yyyy"
-                value={resumeInfo.experience.start}
-                onChange={(e) => {
-                  const updateValue = {
-                    ...resumeInfo.experience,
-                    start: e.target.value,
-                  };
-                  const updateResumeInfo = {
-                    ...resumeInfo,
-                    experience: updateValue,
-                  };
-                  setResumeInfo(updateResumeInfo);
-                }}
-              />
-            </div>
-          </div>
-          <div>
-            <h2 className="global_input_titles">დამთავრების რიცხვი</h2>
-            <div className="date_input">
-              <input
-                type="date"
-                placeholder="mm / dd / yyyy"
-                value={resumeInfo.experience.end}
-                onChange={(e) => {
-                  const updateValue = {
-                    ...resumeInfo.experience,
-                    end: e.target.value,
-                  };
-                  const updateResumeInfo = {
-                    ...resumeInfo,
-                    experience: updateValue,
-                  };
-                  setResumeInfo(updateResumeInfo);
-                }}
-              />
-            </div>
-          </div>
-        </section>
-        <section className="about_me">
-          <h2 className="global_input_titles">აღწერა</h2>
-          <textarea
-            className="global_textarea experience_page"
-            placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
-            value={resumeInfo.experience.description}
-            onChange={(e) => {
-              const updateValue = {
-                ...resumeInfo.experience,
-                description: e.target.value,
-              };
-              const updateResumeInfo = {
-                ...resumeInfo,
-                experience: updateValue,
-              };
-              setResumeInfo(updateResumeInfo);
-            }}
-          >
-            ზოგადი ინფო შენ შესახებ
-          </textarea>
-        </section>
-        <div className="tab_divider_line"></div>
-      </div>
+      {experienceInfo.map((item, index) => {
+        return <SingleMoreExperience key={index} index={index} item={item} />;
+      })}
 
-      <button className="addmorefield">მეტი გამოცდილების დამატება</button>
+      <button className="addmorefield" onClick={() => addNewExperienceObg()}>
+        მეტი გამოცდილების დამატება
+      </button>
       <button
         className="next_back personal_page short"
         onClick={() => setPageNum(1)}

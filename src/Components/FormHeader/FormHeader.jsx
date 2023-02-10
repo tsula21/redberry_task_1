@@ -6,10 +6,7 @@ import { UserContext } from "../../UserContext";
 import back from "../../Assets/form/left_arrow.svg";
 
 const FormHeader = () => {
-  const { pageNum, setPageNum } = useContext(UserContext);
-  const resetArray = () => {
-    console.log("resett");
-  };
+  const { pageNum, setPageNum, resetArray } = useContext(UserContext);
 
   return (
     <div className="global_header_container">

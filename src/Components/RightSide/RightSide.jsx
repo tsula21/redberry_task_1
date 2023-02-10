@@ -10,7 +10,7 @@ import mini_logo from "../../Assets/form/mini_logo.svg";
 import avatar from "../../Assets/form/avatar.png";
 
 const RightSide = () => {
-  const { resumeInfo, setResumeInfo } = useContext(UserContext);
+  const { resumeInfo, experienceInfo, educationInfo } = useContext(UserContext);
 
   return (
     <div
@@ -21,9 +21,13 @@ const RightSide = () => {
       <div className="rendering_options">
         <RightPersonal />
         <div className="tab_divider_rightside for_personal"></div>
-        <RightExperience />
+        {experienceInfo.map((item, index) => {
+          return <RightExperience key={index} index={index} />;
+        })}
         <div className="tab_divider_rightside for_experience"></div>
-        <RightEducation />
+        {educationInfo.map((item, index) => {
+          return <RightEducation key={index} index={index} />;
+        })}
       </div>
 
       <img className="rightside_logo" src={mini_logo} alt="logo" />

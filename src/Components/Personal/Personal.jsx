@@ -6,7 +6,7 @@ import UploadImage from "../Upload/Upload";
 //
 
 const Personal = () => {
-  const { pageNum, setPageNum, resumeInfo, setResumeInfo } =
+  const { pageNum, setPageNum, resumeInfo, setResumeInfo, resetArr, remove } =
     useContext(UserContext);
 
   return (
@@ -116,6 +116,7 @@ const Personal = () => {
       </section>
 
       <button className="next_back personal_page" onClick={() => setPageNum(2)}>
+        {/* <button className="next_back personal_page" onClick={() => remove()}> */}
         ᲨᲔᲛᲓᲔᲒᲘ
       </button>
     </>
