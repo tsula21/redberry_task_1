@@ -4,6 +4,15 @@
   justify-content: space-between;
   margin-bottom: 54px;
 }
+.firstName {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.lastName {
+  display: flex;
+  align-items: center;
+}
 .upload_section {
   display: flex;
   align-items: center;
@@ -37,13 +46,23 @@
 .gmail {
   margin-bottom: 29px;
 }
-button.next_back.personal_page {
-  position: absolute;
-  right: 150px;
-  bottom: 65px;
-}
 input[type="file"] {
   color: orangered;
   margin-left: 19px;
   width: 107px;
+}
+
+/* .global_common_input:valid {
+  border: 2px solid greenyellow;
+} */
+.validation_icons.forName.redd {
+  position: absolute;
+  right: -36px !important;
+}
+.validation_icons.forName.greenn {
+  position: absolute;
+  right: 16px !important;
+}
+.validation_icons.forLastName.redd {
+  position: absolute;
 }

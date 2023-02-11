@@ -22,6 +22,7 @@
 }
 .date_input {
   display: flex;
+  height: 48px;
   align-items: center;
   justify-content: space-between;
   width: 371px;
@@ -39,4 +40,7 @@
   width: 100%;
   padding: 14.4px 0px;
   border: none;
+}
+.global_common_input.redline {
+  border: 2px solid red !important;
 }

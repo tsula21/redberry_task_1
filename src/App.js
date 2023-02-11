@@ -9,6 +9,7 @@ import Experience from "./Components/Experience/Experience";
 function App() {
   const [pageNum, setPageNum] = useState(1);
   const [degreeArr, setDegreeArr] = useState();
+  const [validation, setValidation] = useState(true);
 
   const initialState = {
     personal: {
@@ -19,30 +20,16 @@ function App() {
       email: "",
       phone: "",
     },
-    // experience: {
-    //   position: "",
-    //   company: "",
-    //   start: "",
-    //   end: "",
-    //   description: "",
-    // },
-    // education: {
-    //   university: "",
-    //   degree: null,
-    //   education_finish: "",
-    //   education_description: "",
-    // },
   };
   const [resumeInfo, setResumeInfo] = useState(initialState);
   const [experienceInfo, setExperienceInfo] = useState([
     {
       id: 0,
-      position: "დეველოპერი",
-      company: "სილკ უნივერსალი",
-      start: "2019-03-16",
-      end: "2023-11-25",
-      description:
-        "ვიყავი დეველოპერი დიდი ხანი,ვიყავი დეველოპერი დიდი ხანი ვიყავი დეველოპერი დიდი ხანი  ვიყავი დეველოპერი დიდი ხანი.",
+      position: "",
+      company: "",
+      start: "",
+      end: "",
+      description: "",
     },
   ]);
   const [educationInfo, setEducationInfo] = useState([
@@ -123,6 +110,7 @@ function App() {
       setDegreeArr(data);
     })();
   }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -137,6 +125,7 @@ function App() {
             setExperienceInfo,
             educationInfo,
             setEducationInfo,
+            validation,
             // functions
             addNewExperienceObg,
             addNewEducationObg,

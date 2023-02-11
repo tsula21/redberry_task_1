@@ -1,34 +1,45 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../UserContext";
 import DropDownMenu from "../DropDownMenu/DropDownMenu";
+//
+import red from "../../Assets/form/validation/red.svg";
+import green from "../../Assets/form/validation/green.svg";
 
 const SingleMoreEducation = ({ index }) => {
-  const { educationInfo, setEducationInfo } = useContext(UserContext);
+  const { educationInfo, setEducationInfo, validation } =
+    useContext(UserContext);
   return (
     <>
-      <section className="school">
-        <h2 className="global_input_titles">სასწავლებელი</h2>
-        <input
-          className="global_common_input normal_inputs full_input"
-          type="text"
-          placeholder="სასწავლებელი"
-          value={educationInfo[index].university}
-          onChange={(e) => {
-            setEducationInfo(
-              educationInfo.map((item) => {
-                if (item.id == index) {
-                  return {
-                    ...educationInfo[index],
-                    university: e.target.value,
-                  };
-                } else {
-                  return item;
-                }
-              })
-            );
-          }}
+      <section className="school validation_main">
+        <div>
+          <h2 className="global_input_titles">სასწავლებელი</h2>
+          <input
+            className="global_common_input normal_inputs full_input"
+            type="text"
+            placeholder="სასწავლებელი"
+            value={educationInfo[index].university}
+            onChange={(e) => {
+              setEducationInfo(
+                educationInfo.map((item) => {
+                  if (item.id == index) {
+                    return {
+                      ...educationInfo[index],
+                      university: e.target.value,
+                    };
+                  } else {
+                    return item;
+                  }
+                })
+              );
+            }}
+          />
+          <div className="global_input_validations">მინიმუმ 2 სიმბოლო</div>
+        </div>
+        <img
+          className="validation_icons"
+          src={validation ? green : red}
+          alt="red"
         />
-        <div className="global_input_validations">მინიმუმ 2 სიმბოლო</div>
       </section>
       <section className="working_date">
         <div>

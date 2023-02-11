@@ -1,10 +1,11 @@
 @font-face {
-  font-family: myfont;
-  font-weight: normal;
+  font-family: HelveticaNeue;
   src: url("../fonts/HelveticaNeue.ttc");
+  /* font-weight: bold; */
 }
+
 * {
-  font-family: myfont;
+  font-family: HelveticaNeue;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,7 +13,8 @@
 a {
   text-decoration: none;
 }
-input {
+input,
+textarea {
   outline: none;
 }
 button,
@@ -21,10 +23,8 @@ button,
   outline: none;
 }
 body {
-  /* background-color: #2d313ac4; */
-  /* background: #474747; */
   color: #000;
-  font-family: myfont;
+  font-family: HelveticaNeue;
 }
 .container {
   max-width: 1920px;

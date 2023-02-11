@@ -23,8 +23,6 @@ const DropDownMenu = ({ index }) => {
       })
     );
   }, [selected]);
-  //
-  const options = ["რეაქთი", "ვიუ ვიუ", "ანგულარი"];
   return (
     <div className="dropdown">
       <div className="dropdown-btn">
@@ -47,7 +45,7 @@ const DropDownMenu = ({ index }) => {
                   setIsActive(false);
                 }}
               >
-                {item.title}
+                <p>{item.title}</p>
               </div>
             );
           })}

@@ -18,13 +18,6 @@
   height: 16px;
   cursor: pointer;
 }
-.page_title {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  color: #1a1a1a;
-}
 .global_content_header span {
   display: flex;
   align-items: center;
@@ -42,43 +35,12 @@
   width: 100%;
   border: 1px solid #1a1a1a;
 }
-.next_back {
-  background: #6b40e3;
-  border-radius: 4px;
-  width: 151px;
-  height: 48px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  border: none;
-}
-.next_back.short {
-  width: 113px;
-}
-button.next_back.personal_page.short {
-  left: 150px;
-}
-.addmorefield {
-  width: 289px;
-  height: 48px;
-  background: #62a1eb;
-  border-radius: 4px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #ffffff;
-  border: none;
-}
 /* inputs */
 .global_common_input {
   background: #ffffff;
   border: 1px solid #bcbcbc;
   border-radius: 4px;
-  color: rgba(0, 0, 0, 0.6);
+  color: #000000;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -87,6 +49,19 @@ button.next_back.personal_page.short {
   padding-left: 16px;
   padding-right: 16px;
 }
+.globalborder_typing {
+  border: 2px solid #bcbcbc !important;
+}
+.globalborder_green {
+  border: 1px solid #98e37e !important;
+}
+.globalborder_red {
+  border: 1px solid #ef5050 !important;
+}
+.globaltext_red {
+  color: #e52f2f !important;
+}
+
 .name_inputs {
   width: 371px;
 }
@@ -115,6 +90,13 @@ button.next_back.personal_page.short {
 }
 /* RENDER_SIDE ???????????*/
 /* =============================TITLES, SUBTITLES============================= */
+.page_title {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1a1a1a;
+}
 .global_rendered_fullname {
   font-style: normal;
   font-weight: 700;
@@ -175,4 +157,41 @@ button.next_back.personal_page.short {
   border: 1px solid #bcbcbc;
   border-radius: 4px;
   padding: 12.7px 16px;
+}
+.validation_main {
+  display: flex;
+  align-items: center;
+}
+.validation_main div {
+  width: 100%;
+}
+.validation_icons {
+  position: absolute;
+  right: 115.5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+.validation_icons.redd {
+  display: block;
+  width: 22px;
+  height: 20px;
+  background-image: url(../Assets/form//validation/red.svg);
+}
+.validation_icons.greenn {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-image: url(../Assets/form//validation/green.svg);
+  right: 162.5px !important;
+}
+.global_common_input:invalid {
+  border: 2px solid red;
+}
+.global_common_input.isValid {
+  border: 2px solid #98e37e;
+}
+.global_textarea.greenn {
+  border: 2px solid #98e37e;
 }
