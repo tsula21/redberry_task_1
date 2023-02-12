@@ -41,6 +41,6 @@
   padding: 14.4px 0px;
   border: none;
 }
-.global_common_input.redline {
-  border: 2px solid red !important;
+textarea.global_textarea.experience_page.isValid {
+  border: 2px solid #98e37e !important;
 }

@@ -32,3 +32,9 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+.container.final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+}

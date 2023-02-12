@@ -4,41 +4,68 @@ import { UserContext } from "./UserContext";
 import "./Styles/App.css";
 import Main from "./Pages/Main/Main";
 import Form from "./Pages/Form/Form";
+import Final from "./Pages/Final/Final";
 import Experience from "./Components/Experience/Experience";
+import RightSide from "./Components/RightSide/RightSide";
+import Modal from "./Components/Modal/Modal";
 
 function App() {
   const [pageNum, setPageNum] = useState(1);
   const [degreeArr, setDegreeArr] = useState();
-  const [validation, setValidation] = useState(true);
+  const [validationExp, setValidationExp] = useState(false);
+  const [validationEduc, setValidationEduc] = useState(false);
+  const [completed, setCompleted] = useState(true);
 
   const initialState = {
+    // personal: {
+    //   firstname: "",
+    //   lastname: "",
+    //   photo: [],
+    //   about: "",
+    //   email: "",
+    //   phone: "",
+    // },
     personal: {
-      firstname: "",
-      lastname: "",
+      firstname: "ირაკლი",
+      lastname: "წულაია",
       photo: [],
-      about: "",
-      email: "",
-      phone: "",
+      about:
+        "საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად 1500-იანი წლებიდან იქცა, როდესაც უცნობმა მბეჭდავმა ამწყობ დაზგაზე წიგნის საცდელი ეგზემპლარი დაბეჭდა.",
+      email: "ika.tsulai21@redberry.ge",
+      phone: "+995568942133",
     },
   };
   const [resumeInfo, setResumeInfo] = useState(initialState);
   const [experienceInfo, setExperienceInfo] = useState([
+    // {
+    //   position: "",
+    //   company: "",
+    //   start: "",
+    //   end: "",
+    //   description: "",
+    // },
     {
-      id: 0,
-      position: "",
-      company: "",
-      start: "",
-      end: "",
-      description: "",
+      position: "დეველოპერი",
+      company: "კომპანია კომპანია",
+      start: "02/14/2015",
+      end: "02/14/2017",
+      description:
+        "ინაარსო ტექსტია. იგი სტანდარტად 1500-იანი წლებიდან იქცა, როდესაც უცნობმა მბეჭდავმა ამწყობ საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად 1500-იანი წლებიდან იქცა, როდესაც უცნობმა მბეჭდავმა ამწყობ ",
     },
   ]);
   const [educationInfo, setEducationInfo] = useState([
+    // {
+    //   university: "",
+    //   degree: null,
+    //   education_finish: "",
+    //   education_description: "",
+    // },
     {
-      id: 0,
-      university: "",
-      degree: null,
-      education_finish: "",
-      education_description: "",
+      university: "საქართველოს ტექნიკური უნივერსიტეტი",
+      degree: "ბაკალავრი",
+      education_finish: "02/14/2015",
+      education_description:
+        "საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად საბეჭდი და ტიპოგრაფიული ინდუსტრიის უშინაარსო ტექსტია. იგი სტანდარტად ",
     },
   ]);
 
@@ -48,7 +75,7 @@ function App() {
     setEducationInfo([
       ...educationInfo,
       {
-        id: educationInfo.length,
+        // id: educationInfo.length,
         university: "",
         degree: null,
         education_finish: "",
@@ -61,7 +88,7 @@ function App() {
     setExperienceInfo([
       ...experienceInfo,
       {
-        id: experienceInfo.length,
+        // id: experienceInfo.length,
         position: "",
         company: "",
         start: "",
@@ -75,7 +102,7 @@ function App() {
     setResumeInfo(initialState);
     setExperienceInfo([
       {
-        id: 0,
+        // id: 0,
         position: "",
         company: "",
         start: "",
@@ -85,7 +112,7 @@ function App() {
     ]);
     setEducationInfo([
       {
-        id: 0,
+        // id: 0,
         university: "",
         degree: null,
         education_finish: "",
@@ -94,7 +121,6 @@ function App() {
     ]);
   };
   useEffect(() => {
-    console.log("request");
     (async () => {
       const limit = 10;
       const response = await fetch(
@@ -125,8 +151,14 @@ function App() {
             setExperienceInfo,
             educationInfo,
             setEducationInfo,
-            validation,
-            // functions
+            // VALIDATIONS
+            validationExp,
+            setValidationExp,
+            validationEduc,
+            setValidationEduc,
+            completed,
+            setCompleted,
+            // FUNCTIONS
             addNewExperienceObg,
             addNewEducationObg,
             resetArray,
@@ -135,8 +167,10 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/personal" element={<Form />} />
+              <Route path="/form" element={<Form />} />
+              {/* <Route path="/completed" element={<Final />} /> */}
             </Routes>
+            <Modal />
           </div>
         </UserContext.Provider>
       </div>

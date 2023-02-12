@@ -1,7 +1,12 @@
 .rightside {
   width: calc(100% - 160px);
   margin: 68px auto 0 auto;
-  display: none;
+  /* display: none; */
+  /* ტესტ */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* min-height: 1012px; */
 }
 .rendering_options {
   display: flex;
@@ -17,7 +22,7 @@
   margin-bottom: 24px;
 }
 .for_experience {
-  /* margin-top: 32px; */
+  margin-top: 32px;
   margin-bottom: 26px;
 }
 .rightside.active {
@@ -43,6 +48,7 @@
 }
 .rightside .text_field {
   width: 415px;
+  line-break: anywhere;
 }
 .rightside .text_field section {
   display: flex;
@@ -78,8 +84,13 @@
   text-transform: lowercase;
   color: #000000;
 }
+
+.rightside_logo_cont {
+  width: calc(100% - 160px);
+  height: 86px;
+  margin: 45px auto 0 auto;
+}
 img.rightside_logo {
-  position: absolute;
-  left: 78px;
-  bottom: 44px;
+  width: 42px;
+  height: 42px;
 }

@@ -8,20 +8,23 @@ import green from "../../Assets/form/validation/green.svg";
 //
 
 const Personal = () => {
-  const {
-    pageNum,
-    setPageNum,
-    resumeInfo,
-    setResumeInfo,
-    resetArr,
-    remove,
-    validation,
-  } = useContext(UserContext);
+  const { pageNum, setPageNum, resumeInfo, setResumeInfo, resetArr, remove } =
+    useContext(UserContext);
 
   const [forGmail, setForGmail] = useState(null);
   const [forPhone, setForPhone] = useState(null);
   const [forName, setForName] = useState(null);
   const [forLastName, setForLastName] = useState(null);
+  // =========================TEST============================
+  const [value, setValue] = useState("");
+
+  const handleChange = (event) => {
+    const newValue = event.target.value.replace(/\D/g, "");
+    setValue(
+      `+${newValue.replace(/(\d{2})(\d{2})(\d{2})(\d{2})/, "$1 $2 $3 $4")}`
+    );
+  };
+  // =====================================================
 
   const nameValidation = () => {
     const regex = /^[ა-ჰ]{2,}$/;
@@ -50,7 +53,10 @@ const Personal = () => {
     }
   };
   const emailValidation = () => {
-    const regex = /@redberry\.ge/i;
+    // const regex =
+    //   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@redberry\.ge$/;
+    let regex = /^[a-zA-Z0-9_.+-]+@redberry\.ge$/;
+
     if (regex.test(resumeInfo.personal.email)) {
       setForGmail(true);
     } else if (
@@ -63,20 +69,31 @@ const Personal = () => {
     }
   };
   const numValidation = () => {
-    const regex = /^(\+?995)?(79\d{7}|5\d{8})$/;
-
+    const regex = /^(\+995|00995|0)\s*\d{3}\s*\d{2}\s*\d{2}\s*\d{2}$/;
     if (regex.test(resumeInfo.personal.phone)) {
       setForPhone(true);
-      console.log("is valid");
     } else if (
       !regex.test(resumeInfo.personal.phone) &&
       resumeInfo.personal.phone !== ""
     ) {
-      console.log("no valid");
       setForPhone(false);
     } else {
-      console.log("????");
       setForPhone(null);
+    }
+  };
+
+  const nextPage = () => {
+    if (
+      forName &&
+      forLastName &&
+      forPhone &&
+      forGmail &&
+      resumeInfo.personal.photo[0]
+    ) {
+      console.log("next");
+      setPageNum(2);
+    } else {
+      console.log("fill all fields");
     }
   };
 
@@ -85,7 +102,6 @@ const Personal = () => {
     numValidation();
     nameValidation();
     lastNameValidation();
-    // console.log(forGmail);
   }, [
     resumeInfo.personal.email,
     resumeInfo.personal.phone,
@@ -264,7 +280,7 @@ const Personal = () => {
         ></div>
       </section>
 
-      <button className="next_back personal_page" onClick={() => setPageNum(2)}>
+      <button className="next_back personal_page" onClick={() => nextPage()}>
         ᲨᲔᲛᲓᲔᲒᲘ
       </button>
     </>

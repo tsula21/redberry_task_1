@@ -1,0 +1,10 @@
+.final_header {
+  position: absolute;
+  left: 48px;
+  top: 45px;
+}
+.final_header .global_back_icon {
+  position: unset !important;
+  left: unset !important;
+  top: unset !important;
+}

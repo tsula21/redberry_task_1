@@ -4,6 +4,16 @@
   align-items: flex-start;
   background: #f9f9f9;
 }
+.form_container.final {
+  justify-content: center;
+  align-items: center;
+  height: 1080px;
+}
+
+.form_container.final .rightside {
+  /* overflow: auto; */
+  /* min-height: 880px; */
+}
 .form_page_left_container {
   width: calc(100% - 300px);
   height: 100%;
@@ -15,12 +25,20 @@
   min-height: 1080px;
   position: relative;
 }
+.form_page_left.final {
+  display: none;
+}
 .form_page_right {
   width: 42.8%;
   height: 1080px;
   background-color: #fff;
   position: relative;
   overflow: auto;
+}
+.form_page_right.final {
+  border: 0.8px solid #000000;
+  /* overflow: unset; */
+  height: 970px;
 }
 /* buttons */
 .addmorefield {

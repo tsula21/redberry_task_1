@@ -1,11 +1,13 @@
 .rightExperience {
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
+  line-break: anywhere;
 }
 .rightExperience .global_rendered_subtitle_italic {
   margin: 7px 0 16px 0;
 }
 .rightExperience section {
   display: flex;
+  line-break: anywhere;
 }
 .rightExperience section p:first-child {
   margin-right: 7px;

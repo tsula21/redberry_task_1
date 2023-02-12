@@ -6,7 +6,7 @@ const Upload = () => {
   const { resumeInfo, setResumeInfo } = useContext(UserContext);
 
   const handleInputChange = (e) => {
-    console.log(e.target.files);
+    // console.log(e.target.files);
     const updateValue = {
       ...resumeInfo.personal,
       photo: URL.createObjectURL(e.target.files[0]),
