@@ -29,6 +29,9 @@
   display: none;
 }
 .form_page_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 42.8%;
   height: 1080px;
   background-color: #fff;

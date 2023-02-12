@@ -8,7 +8,7 @@ import green from "../../Assets/form/validation/green.svg";
 //
 
 const Personal = () => {
-  const { pageNum, setPageNum, resumeInfo, setResumeInfo, resetArr, remove } =
+  const { setPageNum, resumeInfo, setResumeInfo, resetArr, remove } =
     useContext(UserContext);
 
   const [forGmail, setForGmail] = useState(null);

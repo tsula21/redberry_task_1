@@ -49,16 +49,6 @@ const Education = () => {
       <button className="next_back personal_page" onClick={() => allDone()}>
         ᲓᲐᲡᲠᲣᲚᲔᲑᲐ
       </button>
-
-      {/* {validationEduc ? (
-        <Link to="/completed">
-          <button className="next_back personal_page" onClick={() => allDone()}>
-            ᲓᲐᲡᲠᲣᲚᲔᲑᲐ
-          </button>
-        </Link>
-      ) : (
-        <button className="next_back personal_page">ᲓᲐᲡᲠᲣᲚᲔᲑᲐ</button>
-      )} */}
     </>
   );
 };

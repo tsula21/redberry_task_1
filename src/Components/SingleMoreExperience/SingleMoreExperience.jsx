@@ -199,7 +199,6 @@ const SingleMoreExperience = ({ index }) => {
         <div>
           <h2 className="global_input_titles">დამთავრების რიცხვი</h2>
           <div
-            // className="date_input"
             className={`date_input ${
               experienceInfo[index].end.length && "global_validation_green"
             }`}
