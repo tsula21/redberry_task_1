@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../UserContext";
 import "../DropDownMenu/DropDownMenu.css";
-import DropDownMenu from "../DropDownMenu/DropDownMenu";
 //
-import red from "../../Assets/form/validation/red.svg";
-import green from "../../Assets/form/validation/green.svg";
 import left_arrow from "../../Assets/form/down_arrow.svg";
 
 const SingleMoreEducation = ({ index, indicator, setIndicator }) => {
@@ -112,7 +109,7 @@ const SingleMoreEducation = ({ index, indicator, setIndicator }) => {
         if (i == index) {
           return {
             ...educationInfo[index],
-            degree: selected,
+            degree: educationInfo[index].degree,
           };
         } else {
           return item;
@@ -167,7 +164,9 @@ const SingleMoreEducation = ({ index, indicator, setIndicator }) => {
           >
             <div className="dropdown">
               <div className="dropdown-btn">
-                {selected ? selected : "აირჩიეთ ხარისხი"}
+                {educationInfo[index].degree
+                  ? educationInfo[index].degree
+                  : "აირჩიეთ ხარისხი"}
                 <img
                   src={left_arrow}
                   onClick={() => setIsActive(!isActive)}
@@ -182,7 +181,21 @@ const SingleMoreEducation = ({ index, indicator, setIndicator }) => {
                         className="dropdown-item"
                         key={i}
                         onClick={(e) => {
-                          setSelected(e.target.textContent);
+                          {
+                            setEducationInfo(
+                              educationInfo.map((item, i) => {
+                                if (i == index) {
+                                  return {
+                                    ...educationInfo[index],
+                                    degree: e.target.textContent,
+                                  };
+                                } else {
+                                  return item;
+                                }
+                              })
+                            );
+                          }
+
                           setIsActive(false);
                         }}
                       >

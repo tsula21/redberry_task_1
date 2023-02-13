@@ -4,9 +4,6 @@ import { UserContext } from "./UserContext";
 import "./Styles/App.css";
 import Main from "./Pages/Main/Main";
 import Form from "./Pages/Form/Form";
-import Final from "./Pages/Final/Final";
-import Experience from "./Components/Experience/Experience";
-import RightSide from "./Components/RightSide/RightSide";
 import Modal from "./Components/Modal/Modal";
 
 function App() {
@@ -73,7 +70,6 @@ function App() {
   };
 
   // It resets the state of the form to its initial state
-
   const resetArray = () => {
     console.log("resett");
     setResumeInfo(initialState);
