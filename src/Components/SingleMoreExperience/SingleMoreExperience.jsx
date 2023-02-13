@@ -3,25 +3,30 @@ import { UserContext } from "../../UserContext";
 import red from "../../Assets/form/validation/red.svg";
 import green from "../../Assets/form/validation/green.svg";
 
-const SingleMoreExperience = ({ index }) => {
-  const { experienceInfo, setExperienceInfo, setValidationExp } =
+const SingleMoreExperience = ({ index, indicator, setIndicator }) => {
+  const { experienceInfo, setExperienceInfo, setValidationExp, validationExp } =
     useContext(UserContext);
 
   const [forPosition, setForPosition] = useState(null);
   const [forEmployer, setForEmployer] = useState(null);
   const [forAbout, setForAbout] = useState(null);
+  const [forStart, setStart] = useState(null);
+  const [forEnd, setEnd] = useState(null);
 
   const positionValidation = () => {
     const regex = /^.{2,}$/;
     if (regex.test(experienceInfo[index].position)) {
       setForPosition(true);
+      console.log("val true");
     } else if (
       !regex.test(experienceInfo[index].position) &&
       experienceInfo[index].position !== ""
     ) {
       setForPosition(false);
+      console.log("val false");
     } else {
-      setForPosition(null);
+      // setForPosition(null);
+      console.log("val null");
     }
   };
   const employerValidation = () => {
@@ -34,7 +39,7 @@ const SingleMoreExperience = ({ index }) => {
     ) {
       setForEmployer(false);
     } else {
-      setForEmployer(null);
+      // setForEmployer(null);
     }
   };
   const aboutValidation = () => {
@@ -47,7 +52,7 @@ const SingleMoreExperience = ({ index }) => {
     ) {
       setForAbout(false);
     } else {
-      setForAbout(null);
+      // setForAbout(null);
     }
   };
 
@@ -60,10 +65,48 @@ const SingleMoreExperience = ({ index }) => {
       experienceInfo[index].end
     ) {
       setValidationExp(true);
+      setIndicator(true);
     } else {
       setValidationExp(false);
     }
   };
+
+  const testfunc = () => {
+    if (
+      forPosition &&
+      forEmployer &&
+      forAbout &&
+      experienceInfo[index].start &&
+      experienceInfo[index].end
+    ) {
+      //  setValidationExp(true);
+    } else {
+      // setValidationExp(false);
+      if (forPosition == null) {
+        setForPosition(false);
+      }
+      if (forEmployer == null) {
+        setForEmployer(false);
+      }
+      if (forAbout == null) {
+        setForAbout(false);
+      }
+      if (!experienceInfo[index].end.length) {
+        setEnd(false);
+        console.log(forEnd, "end");
+      }
+      if (!experienceInfo[index].start.length) {
+        setStart(false);
+        console.log(forStart, "start");
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (!indicator) {
+      testfunc();
+    }
+  }, [indicator]);
 
   useEffect(() => {
     positionValidation();
@@ -88,7 +131,7 @@ const SingleMoreExperience = ({ index }) => {
           <input
             className={`global_common_input normal_inputs full_input ${
               forPosition && "isValid"
-            }`}
+            } ${forPosition == false && "invalid"}`}
             type="text"
             placeholder="დეველოპერი, დიზაინერი, ა.შ."
             pattern="^[2-9_ ]*.{3,}$"
@@ -137,7 +180,7 @@ const SingleMoreExperience = ({ index }) => {
           <input
             className={`global_common_input normal_inputs full_input ${
               forEmployer && "isValid"
-            }`}
+            } ${forEmployer == false && "invalid"}`}
             type="text"
             placeholder="დამსაქმებელი"
             pattern="^[2-9_ ]*.{3,}$"
@@ -172,7 +215,7 @@ const SingleMoreExperience = ({ index }) => {
           <div
             className={`date_input ${
               experienceInfo[index].start.length && "global_validation_green"
-            }`}
+            } ${forStart == false && "invalid"}`}
           >
             <input
               className="date_inputs"
@@ -201,7 +244,7 @@ const SingleMoreExperience = ({ index }) => {
           <div
             className={`date_input ${
               experienceInfo[index].end.length && "global_validation_green"
-            }`}
+            } ${forEnd == false && "invalid"}`}
           >
             <input
               className="date_inputs"
@@ -229,9 +272,10 @@ const SingleMoreExperience = ({ index }) => {
       <section className="about_me">
         <h2 className="global_input_titles">აღწერა</h2>
         <textarea
-          className={`global_textarea experience_page ${forAbout && "isValid"}`}
+          className={`global_textarea experience_page ${
+            forAbout && "isValid"
+          } ${forAbout == false && "invalid"}`}
           placeholder="როლი თანამდებობაზე და ზოგადი აღწერა"
-          pattern="^[ა-ჰ]{2,16}$"
           value={experienceInfo[index].description}
           onChange={(e) => {
             setExperienceInfo(

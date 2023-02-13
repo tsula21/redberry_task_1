@@ -47,7 +47,6 @@ function App() {
 
   // ================FUNCTIONS================
   const addNewEducationObg = () => {
-    console.log("add education");
     setEducationInfo([
       ...educationInfo,
       {
@@ -60,7 +59,6 @@ function App() {
     ]);
   };
   const addNewExperienceObg = () => {
-    console.log("add experience");
     setExperienceInfo([
       ...experienceInfo,
       {
@@ -73,6 +71,9 @@ function App() {
       },
     ]);
   };
+
+  // It resets the state of the form to its initial state
+
   const resetArray = () => {
     console.log("resett");
     setResumeInfo(initialState);
@@ -97,6 +98,7 @@ function App() {
     ]);
   };
   useEffect(() => {
+    /* A function that is called immediately for degree array */
     (async () => {
       const limit = 10;
       const response = await fetch(
@@ -106,9 +108,7 @@ function App() {
         console.error("Request failed");
         return;
       }
-
       const data = await response.json();
-
       setDegreeArr(data);
     })();
   }, []);

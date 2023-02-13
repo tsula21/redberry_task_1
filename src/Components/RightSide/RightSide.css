@@ -88,7 +88,8 @@
 .rightside_logo_cont {
   width: calc(100% - 160px);
   height: 86px;
-  margin: 45px auto 0 auto;
+  /* margin: 45px auto 0 auto; */
+  margin: 45px auto;
 }
 img.rightside_logo {
   width: 42px;

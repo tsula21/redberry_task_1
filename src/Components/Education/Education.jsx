@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import "./Education.css";
@@ -13,13 +13,16 @@ const Education = () => {
     validationEduc,
     setCompleted,
   } = useContext(UserContext);
+  const [indicator, setIndicator] = useState(true);
 
   const allDone = () => {
     if (validationEduc) {
       console.log("completed");
       setCompleted(true);
+      setIndicator(true);
     } else {
       console.log("not completed");
+      setIndicator(false);
     }
   };
 
@@ -33,7 +36,15 @@ const Education = () => {
   return (
     <>
       {educationInfo.map((item, index) => {
-        return <SingleMoreEducation key={index} index={index} item={item} />;
+        return (
+          <SingleMoreEducation
+            key={index}
+            index={index}
+            item={item}
+            indicator={indicator}
+            setIndicator={setIndicator}
+          />
+        );
       })}
 
       <button className="addmorefield" onClick={() => addNewSection()}>

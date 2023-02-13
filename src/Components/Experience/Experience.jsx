@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import SingleMoreExperience from "../SingleMoreExperience/SingleMoreExperience";
@@ -8,12 +8,15 @@ import "./Experience.css";
 const Experience = () => {
   const { setPageNum, experienceInfo, addNewExperienceObg, validationExp } =
     useContext(UserContext);
+  const [indicator, setIndicator] = useState(true);
   const nextPage = () => {
     if (validationExp) {
       console.log("next");
       setPageNum(3);
+      setIndicator(true);
     } else {
       console.log("fill all fields");
+      setIndicator(false);
     }
   };
 
@@ -27,7 +30,15 @@ const Experience = () => {
   return (
     <>
       {experienceInfo.map((item, index) => {
-        return <SingleMoreExperience key={index} index={index} item={item} />;
+        return (
+          <SingleMoreExperience
+            key={index}
+            index={index}
+            item={item}
+            indicator={indicator}
+            setIndicator={setIndicator}
+          />
+        );
       })}
 
       <button className="addmorefield" onClick={() => addNewSection()}>

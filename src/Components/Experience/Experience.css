@@ -8,6 +8,12 @@
 .global_textarea.experience_page {
   height: 123px;
 }
+.global_textarea.experience_page.invalid {
+  border: 2px solid #ef5050;
+}
+.date_input.invalid {
+  border: 2px solid #ef5050;
+}
 .experience_tab .personal_name {
   margin-bottom: 33px;
 }

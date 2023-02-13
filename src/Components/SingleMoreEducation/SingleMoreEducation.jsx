@@ -7,15 +7,17 @@ import red from "../../Assets/form/validation/red.svg";
 import green from "../../Assets/form/validation/green.svg";
 import left_arrow from "../../Assets/form/down_arrow.svg";
 
-const SingleMoreEducation = ({ index }) => {
+const SingleMoreEducation = ({ index, indicator, setIndicator }) => {
   const { educationInfo, setEducationInfo, degreeArr, setValidationEduc } =
     useContext(UserContext);
   // For Dropdown Menu
   const [isActive, setIsActive] = useState(false);
   const [selected, setSelected] = useState("");
-  // For Validation
+  //
   const [forSchool, setForSchool] = useState(null);
   const [forAbout, setForAbout] = useState(null);
+  const [forDegree, setForDegree] = useState(null);
+  const [forEnd, setEnd] = useState(null);
 
   const schoolValidation = () => {
     const regex = /^.{2,}$/;
@@ -27,7 +29,7 @@ const SingleMoreEducation = ({ index }) => {
     ) {
       setForSchool(false);
     } else {
-      setForSchool(null);
+      // setForSchool(null);
     }
   };
   const aboutValidation = () => {
@@ -40,7 +42,7 @@ const SingleMoreEducation = ({ index }) => {
     ) {
       setForAbout(false);
     } else {
-      setForAbout(null);
+      // setForAbout(null);
     }
   };
   const nextPage = () => {
@@ -51,10 +53,45 @@ const SingleMoreEducation = ({ index }) => {
       educationInfo[index].education_finish
     ) {
       setValidationEduc(true);
+      setIndicator(true);
     } else {
       setValidationEduc(false);
     }
   };
+  // ================================================================
+  const testfunc = () => {
+    if (
+      forSchool &&
+      forAbout &&
+      educationInfo[index].degree &&
+      educationInfo[index].education_finish
+    ) {
+      //
+    } else {
+      if (forSchool == null) {
+        setForSchool(false);
+        console.log(forSchool, "school");
+      }
+      if (forAbout == null) {
+        setForAbout(false);
+      }
+      if (!educationInfo[index].education_finish.length) {
+        setEnd(false);
+        console.log(forEnd, "end");
+      }
+      if (forDegree == null) {
+        setForDegree(false);
+      }
+      console.log("else");
+    }
+  };
+  useEffect(() => {
+    if (!indicator) {
+      testfunc();
+      console.log("indicator");
+    }
+  }, [indicator]);
+  // ================================================================
   //
   useEffect(() => {
     aboutValidation();
@@ -91,7 +128,7 @@ const SingleMoreEducation = ({ index }) => {
           <input
             className={`global_common_input normal_inputs full_input ${
               forSchool && "isValid"
-            }`}
+            }  ${forSchool == false && "invalid"}`}
             pattern="^[2-9_ ]*.{3,}$"
             type="text"
             placeholder="სასწავლებელი"
@@ -126,7 +163,7 @@ const SingleMoreEducation = ({ index }) => {
           <div
             className={`date_input ${
               educationInfo[index].degree && "global_validation_green"
-            }`}
+            } ${forDegree == false && "invalid"}`}
           >
             <div className="dropdown">
               <div className="dropdown-btn">
@@ -164,7 +201,7 @@ const SingleMoreEducation = ({ index }) => {
             className={`date_input ${
               educationInfo[index].education_finish.length &&
               "global_validation_green"
-            }`}
+            } ${forEnd == false && "invalid"}`}
           >
             <input
               className="date_inputs"
@@ -192,7 +229,9 @@ const SingleMoreEducation = ({ index }) => {
       <section className="about_me education_field">
         <h2 className="global_input_titles">აღწერა</h2>
         <textarea
-          className={`global_textarea experience_page ${forAbout && "isValid"}`}
+          className={`global_textarea experience_page ${
+            forAbout && "isValid"
+          } ${forAbout == false && "invalid"}`}
           placeholder="განათლების აღწერა"
           value={educationInfo[index].education_description}
           onChange={(e) => {

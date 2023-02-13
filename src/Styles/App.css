@@ -189,6 +189,9 @@
 .global_common_input:invalid {
   border: 2px solid red;
 }
+.global_common_input.invalid {
+  border: 2px solid red;
+}
 .global_common_input.isValid {
   border: 2px solid #98e37e;
 }

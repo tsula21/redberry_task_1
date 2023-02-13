@@ -36,7 +36,7 @@ const Personal = () => {
     ) {
       setForName(false);
     } else {
-      setForName(null);
+      // setForName(null);
     }
   };
   const lastNameValidation = () => {
@@ -49,7 +49,7 @@ const Personal = () => {
     ) {
       setForLastName(false);
     } else {
-      setForLastName(null);
+      // setForLastName(null);
     }
   };
   const emailValidation = () => {
@@ -65,7 +65,7 @@ const Personal = () => {
     ) {
       setForGmail(false);
     } else {
-      setForGmail(null);
+      // setForGmail(null);
     }
   };
   const numValidation = () => {
@@ -78,7 +78,7 @@ const Personal = () => {
     ) {
       setForPhone(false);
     } else {
-      setForPhone(null);
+      // setForPhone(null);
     }
   };
 
@@ -93,6 +93,18 @@ const Personal = () => {
       console.log("next");
       setPageNum(2);
     } else {
+      if (forName == null) {
+        setForName(false);
+      }
+      if (forLastName == null) {
+        setForLastName(false);
+      }
+      if (forPhone == null) {
+        setForPhone(false);
+      }
+      if (forGmail == null) {
+        setForGmail(false);
+      }
       console.log("fill all fields");
     }
   };
@@ -114,16 +126,11 @@ const Personal = () => {
       <section className="personal_name">
         <div className="firstName">
           <div>
-            <h2
-              className="global_input_titles"
-              onClick={() => console.log(forGmail)}
-            >
-              სახელი
-            </h2>
+            <h2 className="global_input_titles">სახელი</h2>
             <input
               className={`global_common_input name_inputs normal_inputs ${
                 forName && "isValid"
-              }`}
+              } ${forName == false && "invalid"}`}
               type="text"
               placeholder="ანზორ"
               pattern="^[ა-ჰ]{2,16}$"
@@ -161,7 +168,7 @@ const Personal = () => {
             <input
               className={`global_common_input name_inputs normal_inputs ${
                 forLastName && "isValid"
-              }`}
+              } ${forLastName == false && "invalid"}`}
               type="text"
               placeholder="მუმლაძე"
               pattern="^[ა-ჰ]{2,16}$"
@@ -222,7 +229,7 @@ const Personal = () => {
           <input
             className={`global_common_input normal_inputs full_input ${
               forGmail && "isValid"
-            }`}
+            } ${forGmail == false && "invalid"}`}
             type="email"
             // pattern=".+@redberry\.ge"
             placeholder="anzorr777@redberry.ge"
@@ -253,7 +260,7 @@ const Personal = () => {
           <input
             className={`global_common_input normal_inputs full_input ${
               forPhone && "isValid"
-            }`}
+            } ${forPhone == false && "invalid"}`}
             type="text"
             placeholder="+995 551 12 34 56"
             pattern="([+]995)[5][0-9]{8}"
