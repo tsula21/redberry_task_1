@@ -16,14 +16,7 @@ const Personal = () => {
   const [forName, setForName] = useState(null);
   const [forLastName, setForLastName] = useState(null);
   // =========================TEST============================
-  const [value, setValue] = useState("");
 
-  const handleChange = (event) => {
-    const newValue = event.target.value.replace(/\D/g, "");
-    setValue(
-      `+${newValue.replace(/(\d{2})(\d{2})(\d{2})(\d{2})/, "$1 $2 $3 $4")}`
-    );
-  };
   // =====================================================
 
   const nameValidation = () => {
